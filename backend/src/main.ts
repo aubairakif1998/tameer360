@@ -24,7 +24,7 @@ async function bootstrap() {
 
   const port = process.env.PORT ?? 4000;
   await app.listen(port);
-  console.log(`Tameer360 API running on http://localhost:${port}`);
+  console.log(`Tameer360 API running on http://localhost:${port}/api/v1`);
   console.log(`Health check: http://localhost:${port}/health`);
 }
 void bootstrap();

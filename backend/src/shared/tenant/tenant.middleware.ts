@@ -31,6 +31,7 @@ export class TenantMiddleware implements NestMiddleware {
   async use(req: Request, _res: Response, next: NextFunction) {
     const path = normalizeRequestPath(req);
     const isPublicRoute =
+      path === '/' ||
       path === '/health' ||
       path === '/auth/login' ||
       /^\/platform\/tenants\/[^/]+\/branding$/.test(path);

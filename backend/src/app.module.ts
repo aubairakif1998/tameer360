@@ -22,6 +22,7 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { LedgerModule } from './shared/ledger/ledger.module';
 import { FulfillmentModule } from './shared/fulfillment/fulfillment.module';
 import { StockModule } from './shared/stock/stock.module';
+import { ApiRootController } from './api-root.controller';
 import { HealthController } from './health.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { SettingsModule } from './modules/settings/settings.module';
@@ -51,7 +52,7 @@ import { SettingsModule } from './modules/settings/settings.module';
     ReportsModule,
     SettingsModule,
   ],
-  controllers: [HealthController],
+  controllers: [HealthController, ApiRootController],
   providers: [
     JwtAuthGuard,
     TenantAccessGuard,
