@@ -94,17 +94,29 @@ export const hinglish: Messages = {
     tagline: 'Material Supply ERP',
   },
   auth: {
-    ownerLogin: 'Bhatta Owner Login',
-    ownerLoginDescription:
-      'Apne organization ke workspace mein sign in karein. Tameer360 se diye gaye tenant slug aur credentials use karein.',
-    tenantSlug: 'Tenant slug',
-    tenantSlugPlaceholder: 'jaise demo-bhatta',
-    emailPlaceholder: 'owner@your-bhatta.pk',
+    signInTitle: 'Apne workspace mein sign in karein',
+    signInDescription:
+      'Tameer360 platform access karne ke liye apne organization ke credentials darj karein.',
+    heroTitle: 'Apna operation confidence ke sath chalayein',
+    heroDescription:
+      'Inventory, dispatch, payments aur reporting ke liye ek unified ERP platform — Pakistan ke construction material businesses ke liye.',
+    brandTagline: 'Construction material supply ke liye enterprise ERP',
+    workspaceId: 'Workspace ID',
+    workspaceIdPlaceholder: 'your-organization',
+    workspaceIdHelp:
+      'Aap ki unique organization identifier, onboarding ke dauran di gayi.',
+    emailPlaceholder: 'name@company.com',
     signIn: 'Sign in',
     signingIn: 'Sign in ho raha hai...',
-    loginFailed: 'Login fail ho gaya',
-    platformAdmin: 'Platform admin?',
-    signInHere: 'Yahan sign in karein',
+    showPassword: 'Password dikhao',
+    hidePassword: 'Password chhupao',
+    loginFailed:
+      'Galat credentials. Apni details check karein aur dobara try karein.',
+    secureSignIn: 'Encrypted connection ke sath secured sign-in',
+    featureInventory: 'Inventory aur production tracking',
+    featureDispatch: 'Fleet aur dispatch management',
+    featureFinance: 'Payments, ledger aur financial reports',
+    copyright: '© {{year}} Tameer360. Tamam haqooq mehfooz hain.',
   },
   settings: {
     title: 'Settings',

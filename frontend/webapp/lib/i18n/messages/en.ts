@@ -92,17 +92,28 @@ export const en = {
     tagline: "Material Supply ERP",
   },
   auth: {
-    ownerLogin: "Bhatta Owner Login",
-    ownerLoginDescription:
-      "Sign in to your organization workspace. Use the tenant slug and credentials provided by Tameer360.",
-    tenantSlug: "Tenant slug",
-    tenantSlugPlaceholder: "e.g. demo-bhatta",
-    emailPlaceholder: "owner@your-bhatta.pk",
+    signInTitle: "Sign in to your workspace",
+    signInDescription:
+      "Enter your organization credentials to access the Tameer360 platform.",
+    heroTitle: "Run your operation with confidence",
+    heroDescription:
+      "A unified ERP platform for inventory, dispatch, payments, and reporting — built for construction material businesses in Pakistan.",
+    brandTagline: "Enterprise ERP for construction material supply",
+    workspaceId: "Workspace ID",
+    workspaceIdPlaceholder: "your-organization",
+    workspaceIdHelp:
+      "Your unique organization identifier, provided during onboarding.",
+    emailPlaceholder: "name@company.com",
     signIn: "Sign in",
     signingIn: "Signing in...",
-    loginFailed: "Login failed",
-    platformAdmin: "Platform admin?",
-    signInHere: "Sign in here",
+    showPassword: "Show password",
+    hidePassword: "Hide password",
+    loginFailed: "Invalid credentials. Please check your details and try again.",
+    secureSignIn: "Secured sign-in with encrypted connection",
+    featureInventory: "Inventory & production tracking",
+    featureDispatch: "Fleet & dispatch management",
+    featureFinance: "Payments, ledger & financial reports",
+    copyright: "© {{year}} Tameer360. All rights reserved.",
   },
   settings: {
     title: "Settings",

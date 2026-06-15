@@ -95,17 +95,29 @@ export const ur: Messages = {
     tagline: 'تعمیراتی مواد ERP',
   },
   auth: {
-    ownerLogin: 'بھٹہ مالک لاگ ان',
-    ownerLoginDescription:
-      'اپنے تنظیم کے ورک اسپیس میں سائن ان کریں۔ Tameer360 کی طرف سے دیے گئے ٹیننٹ سلگ اور کریڈنشلز استعمال کریں۔',
-    tenantSlug: 'ٹیننٹ سلگ',
-    tenantSlugPlaceholder: 'مثال: demo-bhatta',
-    emailPlaceholder: 'owner@your-bhatta.pk',
+    signInTitle: 'اپنے ورک اسپیس میں سائن ان کریں',
+    signInDescription:
+      'Tameer360 پلیٹ فارم تک رسائی کے لیے اپنے تنظیم کے کریڈنشلز درج کریں۔',
+    heroTitle: 'اعتماد کے ساتھ اپنے کاروبار کو چلائیں',
+    heroDescription:
+      'انوینٹری، ڈسپیچ، ادائیگیوں اور رپورٹنگ کے لیے ایک متحد ERP پلیٹ فارم — پاکستان میں تعمیراتی مواد کے کاروباروں کے لیے۔',
+    brandTagline: 'تعمیراتی مواد کی فراہمی کے لیے انٹرپرائز ERP',
+    workspaceId: 'ورک اسپیس ID',
+    workspaceIdPlaceholder: 'your-organization',
+    workspaceIdHelp:
+      'آپ کی منفرد تنظیم کی شناخت، آن بورڈنگ کے دوران فراہم کی گئی۔',
+    emailPlaceholder: 'name@company.com',
     signIn: 'سائن ان',
     signingIn: 'سائن ان ہو رہا ہے...',
-    loginFailed: 'لاگ ان ناکام',
-    platformAdmin: 'پلیٹ فارم ایڈمن؟',
-    signInHere: 'یہاں سائن ان کریں',
+    showPassword: 'پاس ورڈ دکھائیں',
+    hidePassword: 'پاس ورڈ چھپائیں',
+    loginFailed:
+      'غلط کریڈنشلز۔ براہ کرم اپنی تفصیلات چیک کریں اور دوبارہ کوشش کریں۔',
+    secureSignIn: 'خفیہ کنکشن کے ساتھ محفوظ سائن ان',
+    featureInventory: 'انوینٹری اور پیداوار کی نگرانی',
+    featureDispatch: 'فلیٹ اور ڈسپیچ مینجمنٹ',
+    featureFinance: 'ادائیگیاں، لیجر اور مالی رپورٹس',
+    copyright: '© {{year}} Tameer360. جملہ حقوق محفوظ ہیں۔',
   },
   settings: {
     title: 'ترتیبات',

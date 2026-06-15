@@ -1,18 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { Shield } from 'lucide-react';
 import { useAuth } from '@/components/providers/auth-provider';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 export default function AdminLoginPage() {
   const { user, isLoading, login, logout } = useAuth();
@@ -37,70 +30,73 @@ export default function AdminLoginPage() {
       const loggedInUser = await login({ email, password });
       if (loggedInUser.role !== 'platform_admin') {
         await logout({ redirect: false });
-        setError('This account is not a platform administrator');
+        setError('Access denied.');
         return;
       }
       window.location.assign('/admin');
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Login failed');
+    } catch {
+      setError('Invalid credentials.');
     } finally {
       setIsSubmitting(false);
     }
   }
 
   return (
-    <div className="flex min-h-full items-center justify-center bg-gradient-to-b from-slate-50 to-white px-4 py-12 dark:from-zinc-950 dark:to-zinc-900">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-xl bg-slate-900 text-white">
-            <Shield className="size-6" />
+    <div className="flex min-h-svh items-center justify-center bg-zinc-950 px-4 py-12">
+      <div className="w-full max-w-sm space-y-8">
+        <div className="space-y-2 text-center">
+          <div className="mx-auto flex size-10 items-center justify-center rounded-lg bg-white/10 text-white">
+            <Shield className="size-5" />
           </div>
-          <CardTitle>Platform Admin Login</CardTitle>
-          <CardDescription>
-            Sign in to create and manage bhatta tenant workspaces.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <label className="text-sm font-medium" htmlFor="email">
-                Email
-              </label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium" htmlFor="password">
-                Password
-              </label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            {error ? (
-              <p className="text-sm text-destructive">{error}</p>
-            ) : null}
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
-              {isSubmitting ? 'Signing in...' : 'Sign in'}
-            </Button>
-          </form>
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            Bhatta owner?{' '}
-            <Link href="/login" className="text-primary underline">
-              Sign in here
-            </Link>
+          <h1 className="text-lg font-semibold text-white">Internal access</h1>
+          <p className="text-sm text-zinc-500">
+            Authorized personnel only.
           </p>
-        </CardContent>
-      </Card>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-zinc-300">
+              Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-10 border-zinc-800 bg-zinc-900 text-white"
+              required
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-zinc-300">
+              Password
+            </Label>
+            <Input
+              id="password"
+              type="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="h-10 border-zinc-800 bg-zinc-900 text-white"
+              required
+            />
+          </div>
+          {error ? (
+            <p role="alert" className="text-sm text-red-400">
+              {error}
+            </p>
+          ) : null}
+          <Button
+            type="submit"
+            className="h-10 w-full bg-white text-zinc-950 hover:bg-zinc-200"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Signing in...' : 'Sign in'}
+          </Button>
+        </form>
+      </div>
     </div>
   );
 }

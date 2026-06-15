@@ -7,7 +7,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.setGlobalPrefix('api/v1');
+  app.setGlobalPrefix('api/v1', { exclude: ['health'] });
 
   app.enableCors({
     origin: process.env.CORS_ORIGIN?.split(',') ?? ['http://localhost:3000'],
@@ -24,6 +24,7 @@ async function bootstrap() {
 
   const port = process.env.PORT ?? 4000;
   await app.listen(port);
-  console.log(`Tameer360 API running on http://localhost:${port}/api/v1`);
+  console.log(`Tameer360 API running on http://localhost:${port}`);
+  console.log(`Health check: http://localhost:${port}/health`);
 }
 void bootstrap();
